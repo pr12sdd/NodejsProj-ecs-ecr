@@ -30,6 +30,14 @@ resource "aws_security_group" "mysg" {
      }
 
      ingress {
+      from_port = 8000
+      to_port = 8000
+      cidr_blocks = ["0.0.0.0/0"]
+      protocol = "tcp"
+      description = "Port 8000 open for this sg"
+     }
+
+     ingress {
         from_port = 443
         to_port = 443
         description = "Port 443 open for this sg"
